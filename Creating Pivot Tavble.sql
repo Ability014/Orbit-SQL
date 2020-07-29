@@ -1,7 +1,7 @@
 # Orbit-SQL
 Orbit SQL Learning Community
 
---Creating a Pivot Table from Bitcoin Dataset hhing Year by Month
+--Creating a Pivot Table from Bitcoin Dataset haing Year by Month
 
 select cc.year,
 	     sum(cc.Jan) Jan,
