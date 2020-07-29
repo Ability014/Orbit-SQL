@@ -4,7 +4,7 @@ Orbit SQL Learning Community
 --Creating a Pivot Table from Bitcoin Dataset haing Year by Month
 
 select cc.year,
-	     sum(cc.Jan) Jan,
+       sum(cc.Jan) Jan,
        sum(cc.Feb) Feb,
        sum(cc.Mar) Mar,
        sum(cc.Apr) Apr,
@@ -18,7 +18,7 @@ select cc.year,
        sum(cc.Dec) 'Dec'
 from (
 Select aa.year, 
-	     case when aa.year between 2013 and 2020 and aa.mon_year = 'January' then aa.closing_price end as Jan,
+       case when aa.year between 2013 and 2020 and aa.mon_year = 'January' then aa.closing_price end as Jan,
        case when aa.year between 2013 and 2020 and aa.mon_year = 'February' then aa.closing_price end as Feb,
        case when aa.year between 2013 and 2020 and aa.mon_year = 'March' then aa.closing_price end as Mar,
        case when aa.year between 2013 and 2020 and aa.mon_year = 'April' then aa.closing_price end as Apr,
@@ -32,7 +32,7 @@ Select aa.year,
        case when aa.year between 2013 and 2020 and aa.mon_year = 'December' then aa.closing_price end as 'Dec'
 from (
 select year(Date) 'Year', 
-	     monthname(Date) as 'mon_year',
+       monthname(Date) as 'mon_year',
        round(avg(closing_price),2) closing_price
 from btc_ts 
 group by year, mon_year) aa) cc
